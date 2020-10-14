@@ -1,5 +1,6 @@
 savedata/
 datasets/
 data/
+__pycache__/
 .idea/
 .avi
