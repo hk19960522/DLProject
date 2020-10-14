@@ -32,16 +32,19 @@ class TrajectoryDataSet(Dataset):
         seq_list_rel = []
 
         for path in all_files:
-            # file_data format: [ frame id ,ped id, ped x, ped y, frame id, ped id, ......]
+            # file_data format: [ [frame id ,ped id, ped x, ped y], frame id, ped id, ......]
             file_data = read_file(path)
+            # logging.debug(f'File data:\n{file_data}')
             #  get all frame id
             frame_id_list = np.unique(file_data[:, 0])
             # logging.debug(f'Frame ID:\n{frame_id_list}')
+            all_frame_data = []
             for frame_id in frame_id_list:
                 # get all peds data in each frame
+                # data_in_frame = file_data[frame_id == file_data[:, 0], :]
+                all_frame_data.append(file_data[frame_id == file_data[:, 0], :])
+            print(all_frame_data)
 
-
-            pass
         return all_files
 
     pass
