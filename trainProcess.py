@@ -42,6 +42,12 @@ class TrainingProcess:
                 if _iter == 0:
                     logging.debug(f'Iter {_iter}, data shape: {len(batch)}')
                     logging.debug(f'{batch[0].shape}')
+                '''
+                batch format:
+                obs_traj, pred_traj, obs_traj_rel, pred_traj_rel, seq_start_end
+                '''
+                obs_traj, pred_traj, obs_traj_rel, pred_traj_rel, seq_start_end = batch
+
                 pass
             break
             pass
