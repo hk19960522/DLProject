@@ -1,7 +1,6 @@
 import argparse
 import ast
-from utils import *
-from dataProcessor import *
+from trainProcess import *
 
 
 def get_parser():
@@ -172,6 +171,7 @@ def get_parser():
         '--clip', default=1, type=int)
     return parser
 
+
 # set parser arg and load, save
 def set_arg(p):
     # default is ./savedata/0/
@@ -225,12 +225,16 @@ if __name__ == '__main__':
     p = parser.parse_args()
     set_arg(p)
 
-
     if not load_arg(p):
         save_arg(p)
     args = load_arg(p)
     torch.cuda.set_device(args.gpu)
 
-    dataset = TrajectoryDataSet(get_dataset_dir(0, 2))
+    process = TrainingProcess(args=args)
+    process.main()
+    # get train set, val set
+
+
+    # dataset, loader = data_loader(args, get_dataset_dir(0, 2))
 
     print('HI')
