@@ -212,7 +212,7 @@ def save_arg(args):
 # set logging config to print info
 def set_logging():
     logging_format = '%(asctime)s %(levelname)-5s [%(filename)s:%(lineno)d] %(message)s'
-    logging.basicConfig(level=logging.DEBUG,
+    logging.basicConfig(level=logging.INFO,
                         datefmt='%H:%M:%S',
                         format=logging_format)
     pass
