@@ -49,7 +49,7 @@ class TrainingProcess:
         logging.debug(f'\nIter time:{iter_per_epoch}\n'
                       f'Dataset size:{len(self.train_dataset)}\n'
                       f'Batch size:{self.args.batch_size}')
-
+        print(self.model)
         for epoch in range(self.args.num_epochs):
 
             loss = 0

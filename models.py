@@ -2,7 +2,33 @@ from utils import *
 import torch.nn as nn
 import torch.nn.functional as F
 
+
 # all the models
+class LocationEncoder(nn.Module):
+    def __init__(self, input_size, output_size):
+        super(LocationEncoder, self).__init__()
+        self.input_size = input_size
+        self.output_size = output_size
+
+        pass
+
+    def forward(self, data):
+        '''
+        :param
+            data:
+                format: [seq length, batch, input_size]
+        :return:
+            output:
+                format: [seq length, batch, output_size]
+        '''
+
+        pass
+
+    def make_mlp(self):
+
+        pass
+
+
 class SimpleLSTM(nn.Module):
     def __init__(self, input_size, input_embedded_size, rnn_size, num_rnn_layer, output_size, pred_len):
         super(SimpleLSTM, self).__init__()
