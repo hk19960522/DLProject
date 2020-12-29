@@ -29,6 +29,28 @@ class LocationEncoder(nn.Module):
         pass
 
 
+class PoolingModel(nn.Module):
+    def __init__(self, input_size, output_size, pooling_size, unit_size=1.0):
+        super(PoolingModel, self).__init__()
+
+        self.input_size = input_size
+        self.output_size = output_size
+        self.pooling_size = pooling_size
+        self.unit_size = unit_size
+
+        self.embedded_layer = nn.Linear(self.pooling_size ** 2, self.output_size)
+        pass
+
+    def forward(self, data):
+        '''
+        data format: seq_len, batch, input_size
+        '''
+
+        # pre-process
+        
+        pass
+
+
 class SimpleLSTM(nn.Module):
     def __init__(self, input_size, input_embedded_size, rnn_size, num_rnn_layer, output_size, pred_len):
         super(SimpleLSTM, self).__init__()
